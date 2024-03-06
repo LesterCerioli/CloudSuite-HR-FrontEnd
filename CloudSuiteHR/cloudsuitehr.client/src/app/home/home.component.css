@@ -5,10 +5,11 @@ main{
 .container{
   color: #ffffff;
   display: flex;
-  height: 40rem;
+  height: fit-content;
   flex-direction: column;
   background-color: #E75C01;
   padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .container .title{
@@ -19,8 +20,9 @@ main{
 
 .card-container{
   display: flex;
+  flex-wrap: wrap;
   max-width: 100%;
-  gap: 5rem;
+  gap: 3rem;
   justify-content: center;
   padding-top: 2rem;
 }
@@ -28,10 +30,11 @@ main{
 .card{
   display: flex;
   flex-direction: column;
-  max-height: 15rem;
+  align-items: center;
   text-align: center;
   gap: 1rem;
   max-width: 15rem;
+  max-height: 20rem;
 }
 
 .card h2{
@@ -43,36 +46,15 @@ main{
   font-weight: lighter;
 }
 
-@media (max-width: 1200px){
-
-  .card-container{
-    gap: 2rem;
-  }
-
-  .card h2{
-    font-size: 1rem;
-  }
-
-  .card h3{
-    font: .5rem;
-  }
+.icon{
+  font-size: 12.5rem;
+  width: 12.5rem;
+  height: 12.5rem;
 }
 
-
-@media (max-width: 414px){
-
-  .container .title{
-    font-size: 1.5rem;
+@media (max-width: 1104px){
+  .card{
+    max-width: 700px;
   }
 
-  .container{
-    height: 100%;
-  }
-
-  .card-container{
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 10rem;
-  }
 }
