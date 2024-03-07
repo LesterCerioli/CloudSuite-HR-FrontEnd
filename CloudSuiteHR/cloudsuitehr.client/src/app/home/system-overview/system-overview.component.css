@@ -2,14 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  background-color: #f1f1f1;
   margin: auto 0;
-  height: 100vh;
+  padding: 40px 0 50px 0
 }
 
 .operations-container{
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   max-width: 80%;
@@ -27,12 +28,14 @@
   border-radius: 10px;
   transition: .5s;
   border-style: none;
-  background-color: #FFFFFF;
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .operation:hover{
-  opacity: .5;
+  /* opacity: .5; */
+  margin: 5px;
+  box-shadow: none;
 }
 
 .icon{

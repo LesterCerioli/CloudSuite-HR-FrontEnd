@@ -1,4 +1,6 @@
 .navbar{
+  /* position: absolute;
+  z-index: 99999999; */
   width: 100%;
   background-color: #222239;
   height: 60px;
