@@ -1,6 +1,18 @@
 <div class="navbar">
-  <a routerLink="/">
-    <img src="../../assets/lts_logo.png" alt="">
-  </a>
-  <button routerLink="/overview">Entrar</button>
+  <div class="container">
+    <a (click)="validation()" routerLink="/">
+      <img src="../../assets/lts_logo.png" alt="">
+    </a>
+    <a *ngIf="validationToken==true" routerLink="/">CCH</a>
+    <a *ngIf="validationToken==true" routerLink="/">Colaboradores</a>
+  </div>
+
+  <button *ngIf="validationToken==false" (click)="validation()" routerLink="/overview">Entrar</button>
+  <div class="navbar-system-overview" *ngIf="validationToken==true">
+    <mat-icon routerLink="/" class="icon">notifications</mat-icon>
+    <mat-icon routerLink="/" class="icon">schedule</mat-icon>
+    <a class="user-icon" href="">
+      {{userIconText}}
+    </a>
+  </div>
 </div>
