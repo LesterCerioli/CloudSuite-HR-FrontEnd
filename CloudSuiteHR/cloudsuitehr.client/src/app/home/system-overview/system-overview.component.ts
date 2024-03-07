@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './system-overview.component.css'
 })
 export class SystemOverviewComponent {
-
+  public operations = [
+    {operationName : 'Metodologia', icon: 'light'},
+    {operationName : 'GLPI', icon: 'support_agent'},
+    {operationName : 'E-mail', icon: 'mail'},
+    {operationName : 'Lista de Ramais', icon: 'call_log'},
+    {operationName : 'Temporário', icon: 'pending_actions'},
+    {operationName : 'Mantis', icon: 'bug_report'},
+    {operationName : 'CRM', icon: 'extension'},
+    {operationName : 'Recrutamento', icon: 'group_add'}
+  ]
 }

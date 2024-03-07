@@ -1,52 +1,10 @@
 <main class="container">
   <section class="operations-container">
-    <button class="operation">
+    <button *ngFor="let operation of operations" class="operation">
       <mat-icon class="icon">
-        light
+        {{operation.icon}}
       </mat-icon>
-      Metodologia
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        support_agent
-      </mat-icon>
-      GLPI
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        mail
-      </mat-icon>
-      E-mail
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        call_log
-      </mat-icon>
-      Lista de Ramais
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        pending_actions
-      </mat-icon>
-      Temporário
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        bug_report
-      </mat-icon>
-      Mantis
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        extension
-      </mat-icon>
-      CRM
-    </button>
-    <button class="operation">
-      <mat-icon class="icon">
-        group_add
-      </mat-icon>
-      Recrutamento
+      {{operation.operationName}}
     </button>
   </section>
 </main>
