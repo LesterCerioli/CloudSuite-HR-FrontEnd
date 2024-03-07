@@ -1,0 +1,42 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  margin: auto 0;
+  height: 100vh;
+}
+
+.operations-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 80%;
+}
+
+.operation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  width: 290px;
+  height: 200px;
+  border-radius: 10px;
+  transition: .5s;
+  border-style: none;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.operation:hover{
+  opacity: .5;
+}
+
+.icon{
+  font-size: 5rem;
+  width: 5rem;
+  height: 5rem;
+}
