@@ -1,0 +1,10 @@
+<main class="container">
+  <section class="operations-container">
+    <button *ngFor="let operation of operations" class="operation">
+      <mat-icon class="icon">
+        {{operation.icon}}
+      </mat-icon>
+      {{operation.operationName}}
+    </button>
+  </section>
+</main>

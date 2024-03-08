@@ -1,15 +1,96 @@
 .navbar{
+  position: fixed;
+  z-index: 99999999;
   width: 100%;
   background-color: #222239;
   height: 60px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 10px 10px 10px 10px;
 }
 
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  transition: 1s linear;
+}
+
+.container a:hover{
+  margin: 10px;
+}
+
+.container .link{
+  padding: 5px;
+  border: 2px solid transparent;
+}
+
+.container .link:hover{
+  color: #E75C01;
+  border-bottom: 2px solid #E75C01;
+  width: fit-content;
+}
+
 .navbar button{
-  width: 9rem;
-  border-radius: 10px;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 5px;
   background-color: #CCCCCC;
-  font-size: 1.05rem;
+  font-size: .9rem;
+  transition: 0.7s;
+  margin-right: 1rem;
+}
+
+.navbar button:hover{
+  opacity: 0.7;
+}
+
+.navbar-system-overview{
+  display: flex;
+  gap: 1rem;
+}
+
+.icon{
+  color: white;
+  cursor: pointer;
+}
+
+.icon:active{
+  color: #E75C01;
+}
+
+.user-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  border-radius: 9999px;
+  background-color: white;
+  margin: 0 auto;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-icon:active{
+  background-color: #E75C01;
+}
+
+@media (max-width: 360px){
+
+  .container a:hover{
+    margin: 0;
+  }
+  .navbar-system-overview{
+    gap: .5rem;
+  }
 }
