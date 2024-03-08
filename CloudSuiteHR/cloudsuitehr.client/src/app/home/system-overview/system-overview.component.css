@@ -32,16 +32,16 @@
   border-style: none;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
 }
 
 .operation:hover{
-  /* opacity: .5; */
   margin: 5px;
   box-shadow: none;
 }
 
 .icon{
-  font-size: 5rem;
-  width: 5rem;
-  height: 5rem;
+  font-size: 6rem;
+  width: 6rem;
+  height: 6rem;
 }

@@ -13,27 +13,41 @@
 .container{
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: .3rem;
+  justify-content: space-between;
 }
 
-.container > a{
+.container a{
   text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 13px;
-  transition: .5s;
+  transition: 1s linear;
 }
 
-.container > a:hover{
+.container a:hover{
   margin: 10px;
 }
 
+.container .link{
+  padding: 10px;
+  border: 2px solid transparent;
+}
+
+.container .link:hover{
+  color: #E75C01;
+  border-bottom: 2px solid #E75C01;
+  width: fit-content;
+}
+
 .navbar button{
-  width: 9rem;
-  border-radius: 10px;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 5px;
   background-color: #CCCCCC;
-  font-size: 1.05rem;
+  font-size: .9rem;
   transition: 0.7s;
+  margin-right: 1rem;
 }
 
 .navbar button:hover{
@@ -50,6 +64,10 @@
   cursor: pointer;
 }
 
+.icon:active{
+  color: #E75C01;
+}
+
 .user-icon{
   display: flex;
   align-items: center;
@@ -61,4 +79,9 @@
   margin: 0 auto;
   font-size: 13px;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.user-icon:active{
+  background-color: #E75C01;
 }
