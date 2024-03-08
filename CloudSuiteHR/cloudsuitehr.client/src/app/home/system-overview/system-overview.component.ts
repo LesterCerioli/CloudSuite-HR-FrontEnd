@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SystemOverviewComponent {
   public operations = [
-    {operationName : 'Metodologia', icon: 'light'},
+    {operationName : 'Metodologia', icon: 'hub'},
     {operationName : 'GLPI', icon: 'support_agent'},
     {operationName : 'E-mail', icon: 'mail'},
     {operationName : 'Lista de Ramais', icon: 'call_log'},
