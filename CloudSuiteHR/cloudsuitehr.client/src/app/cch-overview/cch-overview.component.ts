@@ -2,25 +2,43 @@ import {Component} from '@angular/core';
 import {provideNativeDateAdapter} from '@angular/material/core';
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  month: string;
+  day: number;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+//const ELEMENT_DATA: PeriodicElement[] = getList();
+// [
+//   {month: 1, day: 'Hydrogen'},
+//   {month: 2, day: 'Helium'},
+//   {month: 3, day: 'Lithium'},
+//   {month: 4, day: 'Beryllium'},
+//   {month: 5, day: 'Boron'},
+//   {month: 6, day: 'Carbon'},
+//   {month: 7, day: 'Nitrogen'},
+//   {month: 8, day: 'Oxygen'},
+//   {month: 9, day: 'Fluorine'},
+//   {month: 10, day: 'Neon'},
+// ];
 
+function getList(){
+  const numDaysInMonth = (y: number, m: number) => new Date(y, m, 0).getDate();
+
+  const formatter = new Intl.DateTimeFormat('pt-br', {month: 'short'});
+  const monthName = formatter.format(new Date());
+  const numDays = numDaysInMonth(new Date().getFullYear(), new Date().getMonth()+1);
+  console.log(numDays);
+  let objList = [];
+
+  for (let i = 0; i < numDays; i++){
+    objList.push({
+      month: monthName,
+      day: i + 1
+    })
+  }
+  return objList;
+  ;
+  //console.log(numDays(new Date().getFullYear(), new Date().getMonth()));
+}
 
 @Component({
   selector: 'app-cch-overview',
@@ -29,6 +47,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   providers: [provideNativeDateAdapter()],
 })
 export class CchOverviewComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['month', 'day', 'hour_in', 'hour_lunch', 'lunch_return', 'other_out', 'return', 'hour_out', 'total_hours'];
+  dataSource = getList();
 }

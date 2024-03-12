@@ -1,11 +1,50 @@
 .container{
+  width: 100vh;
   padding-top: 90px;
+  margin-left: 1.5rem;
 }
 
-section{
-  margin-top: 50px;
+.title{
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-table {
-  max-width: 60%;
+hr{
+  margin-left: 3rem;
+  margin-bottom: 1rem;
 }
+
+.name-tag{
+  font-weight: bold;
+  width: fit-content;
+}
+
+.hour-info-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.date-picker-container{
+  width: fit-content;
+}
+
+mat-form-field{
+  width: 11rem;
+}
+
+.table-container {
+  max-width: 80%;
+}
+
+input{
+  width: 5rem;
+}
+
+/* @media (max-width:899px){
+  span{
+    font-size: .8rem;
+  }
+} */
