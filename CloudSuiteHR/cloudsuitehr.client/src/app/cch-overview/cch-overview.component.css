@@ -102,8 +102,10 @@ mat-icon:hover {
   cursor: pointer;
 }
 
-/* @media (max-width:899px){
-  span{
-    font-size: .8rem;
-  }
-} */
+.red{
+  color: red;
+}
+
+.today-row{
+  background-color: #ECF3F8;
+}

@@ -4,6 +4,8 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 export interface PeriodicElement {
   month: string;
   day: number;
+  isWeekend?: boolean;
+  isToday?: boolean;
 }
 
 function getList(){
@@ -14,16 +16,18 @@ function getList(){
   const numDays = numDaysInMonth(new Date().getFullYear(), new Date().getMonth()+1);
 
   let objList = [];
-
   for (let i = 0; i < numDays; i++){
-    objList.push({
-      month: monthName,
-      day: i + 1
-    })
+    let obj = {month: "", day: 0, isWeekend: false, isToday: false}
+    obj.month = monthName;
+    obj.day = i + 1;
+
+    if(i + 1 === new Date().getDate()){
+      obj.isToday = true;
+    }
+    objList.push(obj);
   }
   return objList;
   ;
-  //console.log(numDays(new Date().getFullYear(), new Date().getMonth()));
 }
 
 @Component({
