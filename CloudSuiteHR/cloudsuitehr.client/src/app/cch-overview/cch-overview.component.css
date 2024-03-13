@@ -20,6 +20,10 @@ hr{
   width: fit-content;
 }
 
+.danger{
+  color: red;
+}
+
 .hour-info-container{
   display: flex;
   align-items: center;
@@ -35,16 +39,26 @@ mat-form-field{
   width: 11rem;
 }
 
-.table-container {
-
-}
-
 section{
   width: 50%;
+  max-height: 30rem;
 }
 
 input{
   width: 5rem;
+}
+
+th{
+  text-align: center;
+}
+
+#icon-line{
+  text-align: right;
+}
+
+mat-icon:hover {
+  color: #E75C01;
+  cursor: pointer;
 }
 
 /* @media (max-width:899px){
