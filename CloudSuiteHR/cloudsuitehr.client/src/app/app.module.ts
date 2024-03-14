@@ -15,7 +15,7 @@ import { SystemOverviewComponent } from './home/system-overview/system-overview.
 import { CchOverviewComponent } from './cch-overview/cch-overview.component';
 import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ClockInCardComponent } from './nab-bar/clock-in-card/clock-in-card.component';
+import { ClockInCardComponent } from './nav-bar/clock-in-card/clock-in-card.component';
 
 @NgModule({
   declarations: [
