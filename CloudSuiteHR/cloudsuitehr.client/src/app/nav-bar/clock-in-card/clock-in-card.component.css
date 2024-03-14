@@ -1,0 +1,59 @@
+.container{
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  padding-top: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card{
+  width: 350px;
+  height: 400px;
+  background-color: #f1f1f1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+mat-card-content{
+  display: flex;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+img{
+
+}
+
+.operation-container{
+  display: flex;
+  gap: .25rem;
+  font-size: 5px;
+  cursor: pointer;
+}
+
+.operation-container{
+  display: flex;
+  gap: .25rem;
+  font-size: 5px;
+  cursor: pointer;
+  font-variation-settings:
+    'FILL' 0
+  ;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.clock-in-btn{
+  border: none;
+  color: gray;
+}
+
+.clock-out-btn{
+  border: none;
+  color: green;
+}

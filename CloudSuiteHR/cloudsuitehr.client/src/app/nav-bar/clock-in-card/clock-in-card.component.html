@@ -1,1 +1,31 @@
-<p>clock-in-card works!</p>
+<main class="container">
+  <mat-card>
+    <mat-card-content>
+      <img src="../../../assets/lts_logo.png" alt="">
+      Gadget - Registro de Ponto
+      <div class="operation-container">
+        <mat-icon>info</mat-icon>
+        <mat-icon>remove</mat-icon>
+      </div>
+    </mat-card-content>
+
+    <span class="name-tag">Vigência: </span>
+      <mat-form-field>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-form-field>
+
+    <div class="btn-container">
+      <button class="clock-in-btn">
+        Registrar Entrada
+      </button>
+      <button class="clock-out-btn">
+        Registrar Saída
+      </button>
+    </div>
+
+
+  </mat-card>
+</main>
