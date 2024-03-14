@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {provideNativeDateAdapter} from '@angular/material/core';
 
 export interface PeriodicElement {
@@ -34,6 +34,7 @@ function getList(){
   selector: 'app-cch-overview',
   templateUrl: './cch-overview.component.html',
   styleUrl: './cch-overview.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [provideNativeDateAdapter()],
 })
 export class CchOverviewComponent {

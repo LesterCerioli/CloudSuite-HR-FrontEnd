@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, ChangeDetectionStrategy, Component } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table'
@@ -14,6 +15,7 @@ import { SystemOverviewComponent } from './home/system-overview/system-overview.
 import { CchOverviewComponent } from './cch-overview/cch-overview.component';
 import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ClockInCardComponent } from './nab-bar/clock-in-card/clock-in-card.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,15 @@ import { MatInputModule } from '@angular/material/input';
     HomeComponent,
     NavBarComponent,
     SystemOverviewComponent,
-    CchOverviewComponent
+    CchOverviewComponent,
+    ClockInCardComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule, MatIconModule,
     MatTableModule, MatDatepickerModule,
     MatFormFieldModule, MatInputModule,
-    MatDatepickerModule, MatHint
+    MatDatepickerModule, MatHint, ScrollingModule
   ],
   providers: [
     provideAnimationsAsync('noop')
