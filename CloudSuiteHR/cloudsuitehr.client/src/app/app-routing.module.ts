@@ -19,9 +19,6 @@ const routes: Routes = [
   },{
     path: 'overview/cch',
     component: CchOverviewComponent
-  },{
-    path: 'card',
-    component: ClockInCardComponent
   }
 ];
 

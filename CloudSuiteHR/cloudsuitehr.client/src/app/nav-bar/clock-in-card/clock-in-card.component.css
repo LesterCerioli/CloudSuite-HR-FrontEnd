@@ -1,8 +1,9 @@
 .container{
   width: 100%;
   max-height: 100vh;
+  position: absolute;
+  left: 30%;
   display: flex;
-  padding-top: 200px;
   align-items: center;
   justify-content: center;
 }
@@ -152,4 +153,5 @@ td{
   width: fit-content;
   margin: 0 auto;
   padding: 5px 20px 5px 20px;
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { DateProviderService } from '../../services/date-service/date-provider.service';
 
@@ -18,9 +18,15 @@ export class ClockInCardComponent {
 
   constructor(private service: DateProviderService){}
 
+  @Output() visibilityMessage = new EventEmitter<boolean>();
+  @Input() visibility: boolean = false;
   timeStamp = this.service.formatTimeStampNow();
 
   displayedColumns: string[] = ['check_in', 'check_out', 'sub_total'];
-  // dataSource = [];
   dataSource = [{in: "09:00", out: "12:05", total: "03:05"},{in: "13:01", out: "17:05", total: "XX:XX"}];
+
+  sendChangeVisibility(){
+    this.visibility = !this.visibility;
+    this.visibilityMessage.emit(this.visibility);
+  }
 }

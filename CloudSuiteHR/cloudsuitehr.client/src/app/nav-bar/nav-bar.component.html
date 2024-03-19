@@ -1,18 +1,21 @@
 <div class="navbar">
   <div class="container">
-    <a (click)="validation()" routerLink="/">
-      <img src="../../assets/lts_logo.png" alt="">
-    </a>
-    <a class="link" *ngIf="validationToken==true" routerLink="/overview/cch">CCH</a>
-    <a class="link" *ngIf="validationToken==true" routerLink="/">Colaboradores</a>
-  </div>
+    <div class="navigation">
+      <a (click)="validation()" routerLink="/">
+        <img src="../../assets/lts_logo.png" alt="">
+      </a>
+      <a class="link" *ngIf="validationToken==true" routerLink="/overview/cch">CCH</a>
+      <a class="link" *ngIf="validationToken==true" routerLink="/">Colaboradores</a>
+    </div>
 
-  <button *ngIf="validationToken==false" (click)="validation()" routerLink="/overview">Entrar</button>
-  <div class="navbar-system-overview" *ngIf="validationToken==true">
-    <mat-icon class="icon">notifications</mat-icon>
-    <mat-icon class="icon">schedule</mat-icon>
-    <span class="user-icon">
-      {{userIconText}}
-    </span>
+    <button *ngIf="validationToken==false" (click)="validation()" routerLink="/overview">Entrar</button>
+    <div class="navbar-system-overview" *ngIf="validationToken==true">
+      <mat-icon class="icon">notifications</mat-icon>
+      <mat-icon (click)="changeVisibility()" class="icon" [ngClass]= "{ orange : showClockInCard}">schedule</mat-icon>
+      <span class="user-icon">
+        {{userIconText}}
+      </span>
+    </div>
   </div>
+  <app-clock-in-card (visibilityMessage)="receiveChangeVisibility($event)" [visibility]="showClockInCard" *ngIf="showClockInCard"></app-clock-in-card>
 </div>
