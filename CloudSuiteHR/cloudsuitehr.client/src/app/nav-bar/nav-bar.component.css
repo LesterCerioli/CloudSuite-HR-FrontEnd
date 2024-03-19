@@ -81,11 +81,16 @@
   cursor: pointer;
 }
 
-@media (max-width: 360px){
-
-  .container a:hover{
-    margin: 0;
+@media (max-width: 400px){
+  .container{
+    justify-content: space-around;
+    padding: 10px 0px 10px 0px;
   }
+
+  .navigation{
+    gap: .2rem;
+  }
+
   .navbar-system-overview{
     gap: .5rem;
   }
