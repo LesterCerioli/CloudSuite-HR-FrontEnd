@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { DateProviderService } from '../../services/date-service/date-provider.service';
 
 export interface PeriodicElement {
   in: string;
@@ -7,14 +8,19 @@ export interface PeriodicElement {
   total: string;
 }
 
-
 @Component({
   selector: 'app-clock-in-card',
   templateUrl: './clock-in-card.component.html',
   styleUrl: './clock-in-card.component.css',
-  providers: [provideNativeDateAdapter()],
+  providers: [provideNativeDateAdapter(), DateProviderService],
 })
 export class ClockInCardComponent {
+
+  constructor(private service: DateProviderService){}
+
+  timeStamp = this.service.formatTimeStampNow();
+
   displayedColumns: string[] = ['check_in', 'check_out', 'sub_total'];
+  // dataSource = [];
   dataSource = [{in: "09:00", out: "12:05", total: "03:05"},{in: "13:01", out: "17:05", total: "XX:XX"}];
 }
