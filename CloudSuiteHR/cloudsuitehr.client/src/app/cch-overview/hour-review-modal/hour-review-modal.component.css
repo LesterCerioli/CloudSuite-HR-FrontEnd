@@ -2,8 +2,8 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 550px;
-  height: 450px;
+  width: 700px;
+  height: 530px;
 }
 
 .dialog-header{
@@ -21,7 +21,12 @@ main{
 }
 
 table{
-  border: none;
+  box-shadow: none;
+  border: 1px solid black;
+}
+
+th{
+  background-color: black;
 }
 
 .close-btn{
@@ -30,7 +35,7 @@ table{
   height: fit-content;
   background-color: white;
   cursor: pointer;
-  padding: 0 10px 0 0;
+  margin: 0 10px 0 0;
 }
 
 section{
@@ -38,14 +43,56 @@ section{
 }
 
 .info-container{
-  font-size: 1rem;
+  font-size: 1.1rem;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 td > input{
   width: 100%;
+  text-align: center;
 }
 
 #icon-line{
-  text-align: right;
+  text-align: center;
+}
+
+#icon-line > mat-icon{
+  color: lightgray;
   cursor: pointer;
+}
+
+textarea{
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  resize: none;
+  border-radius: 5px;
+}
+
+.observations{
+  margin-top: 15px;
+}
+
+.operations{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-right: 10px;
+}
+
+.btn{
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  color: white;
+  background-color: #222239;
 }
