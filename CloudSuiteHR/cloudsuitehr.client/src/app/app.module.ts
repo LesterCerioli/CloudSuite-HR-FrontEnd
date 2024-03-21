@@ -19,6 +19,7 @@ import { ClockInCardComponent } from './nav-bar/clock-in-card/clock-in-card.comp
 import { MatCardModule } from '@angular/material/card';
 import { HourReviewModalComponent } from './cch-overview/hour-review-modal/hour-review-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HourAllocationModalComponent } from './cch-overview/hour-review-modal/hour-allocation-modal/hour-allocation-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     SystemOverviewComponent,
     CchOverviewComponent,
     ClockInCardComponent,
-    HourReviewModalComponent
+    HourReviewModalComponent,
+    HourAllocationModalComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

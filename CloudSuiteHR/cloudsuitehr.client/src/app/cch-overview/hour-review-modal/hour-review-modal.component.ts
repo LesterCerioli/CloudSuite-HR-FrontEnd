@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { HourAllocationModalComponent } from './hour-allocation-modal/hour-allocation-modal.component';
 
 
 export interface Project {
@@ -20,12 +21,16 @@ const ELEMENT_DATA: Project[] = [
   styleUrl: './hour-review-modal.component.css'
 })
 export class HourReviewModalComponent {
-  constructor(private ref: MatDialogRef<HourReviewModalComponent>){}
+  constructor(private ref: MatDialogRef<HourReviewModalComponent>, private dialog: MatDialog){}
 
   displayedColumns: string[] = ['client', 'projectName', 'hours', 'operation'];
   dataSource = ELEMENT_DATA;
 
   closeWindow(){
     this.ref.close();
+  }
+
+  openDialog(){
+    this.dialog.open(HourAllocationModalComponent);
   }
 }

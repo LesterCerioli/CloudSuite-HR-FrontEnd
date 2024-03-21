@@ -1,0 +1,32 @@
+<main class="container">
+  <h1 mat-dialog-title>
+    Alocação
+  </h1>
+  <section mat-dialog-content>
+
+  </section>
+  <section mat-dialog-actions>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Cliente </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hoursAllocated">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Horas (em Minutos) </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element">
+          <input style="text-align: center;" value="0" type="number" min="0" max="480">
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </section>
+
+  <section mat-dialog-actions class="operations">
+    <button class="btn" (click)="closeWindow()">Salvar</button>
+    <button class="btn" (click)="closeWindow()">Voltar</button>
+  </section>
+</main>
