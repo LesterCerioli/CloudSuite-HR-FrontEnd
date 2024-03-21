@@ -1,0 +1,70 @@
+<main class="container">
+  <mat-card>
+    <mat-card-content>
+      <img src="../../../assets/lts_logo.png" alt="">
+      Gadget - Registro de Ponto
+      <div class="operation-container">
+        <mat-icon>info</mat-icon>
+        <mat-icon (click)="sendChangeVisibility()">
+          remove
+        </mat-icon>
+      </div>
+    </mat-card-content>
+
+    <div class="date-info-container">
+      <span class="name-tag">Data: </span>
+      <mat-form-field>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      </mat-form-field>
+    </div>
+
+    <div class="btn-container">
+      <button class="clock-in-btn">
+        Registrar Entrada
+      </button>
+      <button class="clock-out-btn">
+        Registrar Saída
+      </button>
+    </div>
+
+    <section class="table-container">
+      <table mat-table [dataSource]="dataSource" class="table-container">
+        <!-- Position Column -->
+        <ng-container matColumnDef="check_in">
+          <th id="top-left" mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Início </th>
+          <td id="bottom-left" mat-cell *matCellDef="let element"> {{element.in}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="check_out">
+          <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Fim </th>
+          <td mat-cell *matCellDef="let element"> {{element.out}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="sub_total">
+          <th id="top-right" mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Subtotal </th>
+          <td id="bottom-right" mat-cell *matCellDef="let element">{{element.total}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </section>
+
+    <section class="info-container">
+      <div class="info">
+        <span class="total">Total do dia: <em>XX:XX</em></span>
+        <span class="alert">*horas ainda em aberto</span>
+      </div>
+      <span class="timestamp">{{timeStamp}}</span>
+    </section>
+
+    <button class="btn-adjust">
+      Solicitar Ajuste
+    </button>
+  </mat-card>
+</main>

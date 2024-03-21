@@ -1,0 +1,109 @@
+<main class="container">
+  <span class="title-container">
+    <h1 class="title">Lançamento de Horas</h1>
+  </span>
+  <section>
+    <div class="hour-info-container">
+      <div class="date-picker-container">
+        <span class="name-tag">Vigência: </span>
+        <mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        </mat-form-field>
+      </div>
+
+      <div class="data-container">
+        <span class="name-tag">Horas úteis: </span>
+        <span>160:00</span>
+      </div>
+
+      <div class="data-container">
+        <span class="name-tag">Horas não justificadas: </span>
+        <span class="danger">03:07 </span>
+      </div>
+
+      <div class="data-container">
+        <span class="name-tag">Total: </span>
+        <span>00:00</span>
+      </div>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="table-container">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="month">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Mês. </th>
+        <td [ngClass]="{'today-row' : element.isToday, 'red' : element.isWeekend }" mat-cell *matCellDef="let element"> {{element.month}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="day">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Dia </th>
+        <td [ngClass]="{'today-row' : element.isToday, 'red' : element.isWeekend }" mat-cell *matCellDef="let element"> {{element.day}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="hour_in">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Hora Entrada </th>
+        <td [ngClass]="{'today-row' : element.isToday}" mat-cell *matCellDef="let element">
+          <input type="text" id="fname" name="fname">
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="hour_lunch">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Saída Almoço </th>
+        <td [ngClass]="{'today-row' : element.isToday}" mat-cell *matCellDef="let element">
+          <input type="text" id="fname" name="fname">
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lunch_return">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Retorno Almoço </th>
+        <td [ngClass]="{'today-row' : element.isToday}" mat-cell *matCellDef="let element">
+          <input type="text" id="fname" name="fname">
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="other_out">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Outra Saída </th>
+        <td [ngClass]="{'today-row' : element.isToday}" mat-cell *matCellDef="let element">
+          <input type="text" id="fname" name="fname">
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="return">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Retorno </th>
+        <td [ngClass]="{'today-row' : element.isToday}" mat-cell *matCellDef="let element">
+          <input type="text" id="fname" name="fname">
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hour_out">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Hora Saída </th>
+        <td [ngClass]="{'today-row' : element.isToday}" mat-cell *matCellDef="let element">
+          <input type="text" id="fname" name="fname">
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total_hours">
+        <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Horas Trabalhadas </th>
+        <td [ngClass]="{'today-row' : element.isToday}" id="icon-line" mat-cell *matCellDef="let element">
+          <mat-icon>
+            text_snippet
+          </mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+  </section>
+
+</main>

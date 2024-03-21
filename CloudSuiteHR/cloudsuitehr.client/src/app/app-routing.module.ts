@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SystemOverviewComponent } from './home/system-overview/system-overview.component';
+import { CchOverviewComponent } from './cch-overview/cch-overview.component';
+import { ClockInCardComponent } from './nav-bar/clock-in-card/clock-in-card.component';
 
 const routes: Routes = [
   {
@@ -14,6 +16,9 @@ const routes: Routes = [
   },{
     path: 'overview',
     component: SystemOverviewComponent
+  },{
+    path: 'overview/cch',
+    component: CchOverviewComponent
   }
 ];
 

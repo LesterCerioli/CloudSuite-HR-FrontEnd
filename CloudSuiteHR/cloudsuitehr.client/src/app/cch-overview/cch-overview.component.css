@@ -1,0 +1,118 @@
+.container{
+  width: 100%;
+  padding-top: 90px;
+}
+
+.title-container{
+  display: flex;
+  max-width: 95%;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.title{
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+hr{
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.name-tag{
+  font-weight: bold;
+  width: fit-content;
+}
+
+.danger{
+  color: red;
+}
+
+.hour-info-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.date-picker-container{
+  width: fit-content;
+}
+
+mat-label{
+  padding-left: 10px;
+}
+
+mat-form-field{
+  height: fit-content;
+  width: 15rem;
+  border: 1px solid #CED4DA;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* teste */
+::ng-deep mat-form-field > .mdc-text-field{
+  padding: 0px;
+}
+
+::ng-deep .mat-mdc-form-field-flex{
+  flex-direction: row-reverse;
+}
+
+::ng-deep .mat-mdc-form-field-flex >  .mat-mdc-form-field-infix{
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 0px 0px;
+}
+
+::ng-deep .mat-mdc-icon-button .mat-mdc-button-touch-target{
+  border: 1px solid #CED4DA;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+::ng-deep .mat-mdc-form-field-bottom-align{
+  display: none;
+}
+
+section{
+  width: 50%;
+  max-height: 1rem;
+  padding-left: 1rem;
+}
+
+input{
+  width: 5rem;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+th{
+  text-align: center;
+}
+
+#fname{
+  padding: 0;
+}
+
+#icon-line{
+  text-align: right;
+}
+
+mat-icon:hover {
+  color: #E75C01;
+  cursor: pointer;
+}
+
+.red{
+  color: red;
+}
+
+.today-row{
+  background-color: #ECF3F8;
+}
