@@ -17,6 +17,8 @@ import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ClockInCardComponent } from './nav-bar/clock-in-card/clock-in-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { HourReviewModalComponent } from './cch-overview/hour-review-modal/hour-review-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     NavBarComponent,
     SystemOverviewComponent,
     CchOverviewComponent,
-    ClockInCardComponent
+    ClockInCardComponent,
+    HourReviewModalComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -33,7 +36,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule, MatDatepickerModule,
     MatFormFieldModule, MatInputModule,
     MatDatepickerModule, MatHint, ScrollingModule,
-    MatCardModule
+    MatCardModule, MatDialogModule
   ],
   providers: [
     provideAnimationsAsync('noop')
