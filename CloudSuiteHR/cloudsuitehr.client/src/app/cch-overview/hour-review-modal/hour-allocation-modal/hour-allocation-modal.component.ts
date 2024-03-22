@@ -3,16 +3,17 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 export interface Role {
   name: string;
+  required: boolean
 }
 
 const ELEMENT_DATA: Role[] = [
-  {name: "Alocação em Projeto"},
-  {name: "Testes Unitários de Software"},
-  {name: "Devops"},
-  {name: "Segurança"},
-  {name: "Alinhamento técnico"},
-  {name: "Daily"},
-  {name: "Reuniões com cliente"},
+  {name: "Alocação em Projeto", required: false},
+  {name: "Testes Unitários de Software", required: false},
+  {name: "Devops", required: false},
+  {name: "Segurança", required: false},
+  {name: "Alinhamento técnico", required: false},
+  {name: "Daily", required: true},
+  {name: "Reuniões com cliente", required: false},
 
 ];
 
