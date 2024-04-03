@@ -93,7 +93,7 @@
       <ng-container matColumnDef="total_hours">
         <th mat-header-cell *matHeaderCellDef style="color: white; background-color: #222239;"> Horas Trabalhadas </th>
         <td [ngClass]="{'today-row' : element.isToday}" id="icon-line" mat-cell *matCellDef="let element">
-          <mat-icon>
+          <mat-icon (click)="openDialog()">
             text_snippet
           </mat-icon>
         </td>
