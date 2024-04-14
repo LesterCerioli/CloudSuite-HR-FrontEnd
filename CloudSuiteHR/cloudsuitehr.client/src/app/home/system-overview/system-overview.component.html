@@ -6,5 +6,12 @@
       </mat-icon>
       {{operation.operationName}}
     </button>
+
+    <button *ngIf="role" (click)="openDialog()" class="operation">
+      <mat-icon class="icon">
+        light
+      </mat-icon>
+      Gerenciamento
+    </button>
   </section>
 </main>

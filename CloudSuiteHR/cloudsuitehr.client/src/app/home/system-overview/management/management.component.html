@@ -1,0 +1,44 @@
+<main class="container">
+
+  <section class="dialog-header">
+    <h2 mat-dialog-title>Gerenciamento de Projetos</h2>
+    <button class="close" mat-button mat-dialog-close>
+      <mat-icon>
+        close
+      </mat-icon>
+    </button>
+  </section>
+
+  <mat-dialog-content>
+
+    <form class="content">
+      <mat-form-field class="example-full-width">
+        <mat-label>Colaborador</mat-label>
+        <input type="text" matInput [formControl]="myCollaboratorControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          @for (option of filteredCollaboratorOptions | async; track option) {
+            <mat-option [value]="option">{{option.name}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Projeto </mat-label>
+        <input type="text" matInput [formControl]="myProjectControl" [matAutocomplete]="autoTest">
+        <mat-autocomplete #autoTest="matAutocomplete" [displayWith]="displayFc">
+          @for (option of filteredProjectOptions | async; track option) {
+            <mat-option [value]="option">{{option.code}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="operations">
+    <button class="btn" mat-button mat-dialog-close>Salvar</button>
+    <button class="btn" mat-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</main>

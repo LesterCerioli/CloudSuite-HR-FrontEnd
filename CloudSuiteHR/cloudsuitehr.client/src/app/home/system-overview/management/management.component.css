@@ -1,0 +1,37 @@
+.dialog-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 20px solid #222239;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+}
+
+.close{
+  background-color: white;
+  border: none;
+  height: fit-content;
+  padding-top: 10px;
+  padding-right: 24px;
+}
+
+.operations{
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.btn{
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  color: white;
+  background-color: #222239;
+}
+
