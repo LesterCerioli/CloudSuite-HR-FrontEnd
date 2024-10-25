@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { DateProviderService } from '../../services/date-service/date-provider.service';
+import { ClockInApiService } from '../../services/clock-in-api.service';
 
 export interface PeriodicElement {
   in: string;
@@ -12,19 +11,52 @@ export interface PeriodicElement {
   selector: 'app-clock-in-card',
   templateUrl: './clock-in-card.component.html',
   styleUrl: './clock-in-card.component.css',
-  providers: [provideNativeDateAdapter(), DateProviderService],
 })
+
 export class ClockInCardComponent {
 
-  constructor(private service: DateProviderService){}
+  constructor(private clockInApiService: ClockInApiService){}
 
   @Output() visibilityMessage = new EventEmitter<boolean>();
   @Input() visibility: boolean = false;
-  timeStamp = this.service.formatTimeStampNow();
 
-  displayedColumns: string[] = ['check_in', 'check_out', 'sub_total'];
-  dataSource = [{in: "09:00", out: "12:05", total: "03:05"},{in: "13:01", out: "17:05", total: "XX:XX"}];
+  dataSource: any[] = [];
 
+  ngOnInit() {
+    this.loadAllClocksIns();
+  }
+
+  loadAllClocksIns() {
+    this.clockInApiService.getAllClockIns().subscribe(
+      (data) => {
+        this.dataSource = data;
+      }
+    );
+  }
+
+  loadClocksInsByDate(date: string) {
+    this.clockInApiService.getClockInsByDate(date).subscribe(
+    (data) => {
+      this.dataSource = data;
+    },
+    (error) => {
+      console.error('Erro ao carregar dados',error);
+    }
+    );
+  }
+
+  createClockIn(clockInData: any) {
+    this.clockInApiService.createClockIn(clockInData).subscribe(
+    (response) => {
+      console.log('Registro criado com sucesso', response);
+      },
+    (error) => {
+      console.error('Erro ao criar o registro', error);
+      }
+    );
+  }
+
+  
   sendChangeVisibility(){
     this.visibility = !this.visibility;
     this.visibilityMessage.emit(this.visibility);
